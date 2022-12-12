@@ -20,6 +20,9 @@ function playRound() {
     } else {
         playerSelection = playerSelection.toLowerCase().trim();
         playerSelection = playerSelection.replaceAll(" ", "");
+        while ((playerSelection != "rock") && (playerSelection != "paper") && (playerSelection != "scissors")) {
+            playerSelection = prompt(`${playerSelection} is not valid. Please pick: rock or paper or scissors`);
+        }
         if (playerSelection === "rock" && computerSelection === "paper") {
             result = "You Lose! Paper beats Rock. ";
             computerGameScore++;
@@ -40,8 +43,6 @@ function playRound() {
             playerGameScore++;
         } else if (playerSelection === computerSelection) {
             result = "Draw! Try again. ";
-        } else if (playerSelection === null | playerSelection === "") {
-
         } else {
             result = 'Oops, something went wrong, put correct answer: "rock", "paper" or "scissors"'
         }
