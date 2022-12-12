@@ -22,6 +22,8 @@ function playRound() {
         playerSelection = playerSelection.replaceAll(" ", "");
         while ((playerSelection != "rock") && (playerSelection != "paper") && (playerSelection != "scissors")) {
             playerSelection = prompt(`${playerSelection} is not valid. Please pick: rock or paper or scissors`);
+            playerSelection = playerSelection.toLowerCase().trim();
+            playerSelection = playerSelection.replaceAll(" ", "");
         }
         if (playerSelection === "rock" && computerSelection === "paper") {
             result = "You Lose! Paper beats Rock. ";
